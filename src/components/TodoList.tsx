@@ -10,7 +10,7 @@ function TodoListComponent() {
   const [updateInputValues, setUpdateInputValues] = useState<{ [key: string]: string }>({});
 
   useEffect(() => {
-    fetch('http://localhost:5009/TodoList', {
+    fetch('https://todo-list-app-api.azurewebsites.net/TodoList', {
       credentials: 'include',
     })
       .then((response) => response.json())
@@ -37,7 +37,7 @@ function TodoListComponent() {
       credentials: 'include'
     };
 
-    fetch('http://localhost:5009/TodoItem', requestOptions)
+    fetch('https://todo-list-app-api.azurewebsites.net/TodoItem', requestOptions)
       .then((response) => {
         if (response.headers.get('Content-Type')?.includes('application/json')) {
           return response.json();
@@ -76,7 +76,7 @@ function TodoListComponent() {
       credentials: 'include'
     };
 
-    fetch('http://localhost:5009/TodoItem', requestOptions)
+    fetch('https://todo-list-app-api.azurewebsites.net/TodoItem', requestOptions)
       .then((response) => {
         console.log('API response:', response);
         window.location.reload();
@@ -98,7 +98,7 @@ function TodoListComponent() {
       credentials: 'include'
     };
 
-    fetch('http://localhost:5009/TodoItem', requestOptions)
+    fetch('https://todo-list-app-api.azurewebsites.net/TodoItem', requestOptions)
       .then((response) => {
         console.log('API response:', response);
         window.location.reload();
