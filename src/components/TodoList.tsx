@@ -10,9 +10,8 @@ function TodoListComponent() {
   const [updateInputValues, setUpdateInputValues] = useState<{ [key: string]: string }>({});
 
   useEffect(() => {
-    fetch("https://todo-list-app-api.azurewebsites.net/TodoList", {
-      credentials: "include",
-      mode: "cors",
+    fetch('https://todo-list-app-api.azurewebsites.net/TodoList', {
+      credentials: 'include'
     })
       .then((response) => response.json())
       .then((data) => {
@@ -35,8 +34,7 @@ function TodoListComponent() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(todoItemRequest),
-      credentials: 'include',
-      mode: 'cors'
+      credentials: 'include'
     };
 
     fetch('https://todo-list-app-api.azurewebsites.net/TodoItem', requestOptions)
@@ -75,8 +73,7 @@ function TodoListComponent() {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(todoItemRequest),
-      credentials: 'include',
-      mode: 'cors'
+      credentials: 'include'
     };
 
     fetch('https://todo-list-app-api.azurewebsites.net/TodoItem', requestOptions)
@@ -98,8 +95,7 @@ function TodoListComponent() {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(todoItemRequest),
-      credentials: 'include',
-      mode: 'cors'
+      credentials: 'include'
     };
 
     fetch('https://todo-list-app-api.azurewebsites.net/TodoItem', requestOptions)
