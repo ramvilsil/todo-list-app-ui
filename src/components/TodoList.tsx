@@ -10,22 +10,21 @@ function TodoListComponent() {
   const [updateInputValues, setUpdateInputValues] = useState<{ [key: string]: string }>({});
 
   useEffect(() => {
-    fetch('https://todo-list-app-api.azurewebsites.net/TodoList', {
-      credentials: 'include',
-      mode: 'cors'
+    fetch("https://todo-list-app-api.azurewebsites.net/TodoList", {
+      credentials: "include",
+      mode: "cors",
     })
       .then((response) => response.json())
       .then((data) => {
         if (data) {
-          console.log('API response:', data);
-          setTodoList(data.todoList);
+          console.log("API response:", data);
+          setTodoList(data);
         } else {
-          console.log('Null TodoList');
+          console.log("Null TodoList");
           setTodoList(null);
         }
-      })
+      });
   }, []);
-
 
   const handleCreate = (todoItemName: string) => {
     const todoItemRequest: TodoItemRequest = {
