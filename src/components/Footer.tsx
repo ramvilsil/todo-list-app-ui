@@ -17,13 +17,13 @@ const Footer = () => {
             </div>
 
             <div className="flex flex-col gap-4">
-                <div className="font-medium">
+                <div>
                     Contact
                 </div>
 
                 <div className="flex flex-col gap-2">
                     <a className="font-bold text-indigo-600 underline underline-offset-4" href="https://linkedin.com/in/ramvilsil">LinkedIn</a>
-                    <a className="font-bold text-indigo-600 underline underline-offset-4" href="https:/github.com/ramvilsil">GitHub</a>
+                    <a className="font-bold text-indigo-600 underline underline-offset-4" href="https://github.com/ramvilsil">GitHub</a>
                 </div>
             </div>
 
