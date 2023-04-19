@@ -18,13 +18,14 @@ function TodoListComponent() {
       .then((data) => {
         if (data) {
           console.log('API response:', data);
-          setTodoList(data);
+          setTodoList(data.todoList);
         } else {
           console.log('Null TodoList');
           setTodoList(null);
         }
       })
   }, []);
+
 
   const handleCreate = (todoItemName: string) => {
     const todoItemRequest: TodoItemRequest = {
