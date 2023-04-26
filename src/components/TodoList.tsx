@@ -131,17 +131,11 @@ function TodoListComponent() {
   return (
     <div className='p-4 w-4/5 ml-auto mr-auto flex flex-col gap-8'>
 
-      <div className='flex flex-col'>
-        <div className='font-medium'>Todo List ID</div>
-        <div>{todoList?.id}</div>
-      </div>
-
-      <hr />
-
-      <div className='flex flex-col gap-2'>
-        <div className='text-xl font-medium'>Add a Todo Item</div>
-        <input className='w-full bg-stone-200 p-4 rounded-md focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-600' value={createInputValue} onChange={handleCreateInputChange} />
-        <button className='bg-blue-600 font-bold p-4 text-white rounded-lg hover:cursor-pointer' onClick={handleCreateButtonClick}>Create</button>
+      <div className='flex gap-2'>
+        <input className='w-full bg-stone-200 p-4 rounded-md focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-600' value={createInputValue} onChange={handleCreateInputChange}
+          placeholder='Add a Todo Item'
+        />
+        <button className='w-1/3 bg-blue-600 font-bold p-4 text-white rounded-lg hover:cursor-pointer' onClick={handleCreateButtonClick}>Create</button>
       </div>
 
       <hr />
@@ -158,6 +152,7 @@ function TodoListComponent() {
                 type="text"
                 value={updateInputValues[todoItem.id] || ''}
                 onChange={(event) => handleUpdateInputChange(todoItem.id, event)}
+                placeholder='Update Todo Item'
               />
 
               <button className='w-full bg-yellow-600 font-bold p-4 text-white rounded-lg hover:cursor-pointer' onClick={() => handleUpdateButtonClick(todoItem.id)}>Update</button>
